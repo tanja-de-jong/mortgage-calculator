@@ -6,3 +6,5 @@ build/
 .idea/
 .java-version
 local-settings.gradle
+.DS_Store
+target/
