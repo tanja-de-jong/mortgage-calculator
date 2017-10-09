@@ -1,0 +1,8 @@
+*.iml
+*.log
+tmp
+build/
+*.iml
+.idea/
+.java-version
+local-settings.gradle
