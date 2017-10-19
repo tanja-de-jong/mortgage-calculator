@@ -17,7 +17,7 @@ public class Chart extends ScrollPane {
     ComboBox<String> type = new ComboBox();
     LineChart<Number,Number> chart;
 
-    public Chart(ChartController controller, Berekenaar model) {
+    public Chart(ChartController controller, Berekenaar model, String onderwerp) {
         this.model = model;
 
         Pane pane = new Pane();

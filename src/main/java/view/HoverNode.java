@@ -17,14 +17,14 @@ public class HoverNode extends StackPane {
         final Label label = createDataThresholdLabel(amount);
 
         setOnMouseEntered(new EventHandler<MouseEvent>() {
-            @Override public void handle(MouseEvent mouseEvent) {
+            public void handle(MouseEvent mouseEvent) {
                 VBox vBox = new VBox(label);
                 getChildren().setAll(vBox);
                 toFront();
             }
         });
         setOnMouseExited(new EventHandler<MouseEvent>() {
-            @Override public void handle(MouseEvent mouseEvent) {
+            public void handle(MouseEvent mouseEvent) {
                 getChildren().clear();
             }
         });

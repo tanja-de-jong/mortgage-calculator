@@ -5,10 +5,14 @@ import java.util.*;
 /**
  * Created by Tanja on 31-8-2017.
  */
-public abstract class Verstrekker {
+public class Verstrekker {
+
+    public static String[] vergelijkingsOnderwerpen = new String[]{"Restbedrag", "Aflossing", "Rente", "Bruto"};
 
     public String name;
     public Map<Double, Double> rente;
+    private Offerte offerte;
+    private Double extraKorting = null;
 
     public List<Double> restBedragen = new ArrayList<Double>();
     public List<Double> aflossingen = new ArrayList<Double>();
@@ -16,20 +20,29 @@ public abstract class Verstrekker {
     public List<Double> brutos = new ArrayList<Double>();
 
     public Map<String, List<Double>> data = new HashMap<String, List<Double>>();
-    public double totaleRente = 0;
-    private double aflossingsPercentage;
+    public Double totaleRente = null;
+    public Double totaleProvisie = 0.0;
 
-    // >0.9 -> 2.45
-    // >67.5 -> 2.15
-    // >0 -> 1.75
-
-    public Verstrekker(String name, Map<Double, Double> renteGroepen) {
+    public Verstrekker(String name, Map<Double, Double> renteGroepen, Double extraKorting) {
         this.name = name;
         this.rente = renteGroepen;
         this.data.put("Restbedrag", restBedragen);
         this.data.put("Aflossing", aflossingen);
         this.data.put("Rente", rentes);
         this.data.put("Bruto", brutos);
+        this.extraKorting = extraKorting;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Offerte getOfferte() {
+        return offerte;
+    }
+
+    public Double getTotaleRente() {
+        return totaleRente;
     }
 
     public Double berekenRente(double marktWaarde) {
@@ -53,32 +66,66 @@ public abstract class Verstrekker {
         return (maandrente / (1 - (Math.pow((1 + maandrente), -nrPeriodes)))) * startBedrag;
     }
 
-    public abstract double berekenAflossing(double renteBedrag, double startBedrag);
-
-    public void berekenBedragen(double startBedrag, double extraAflossing) {
-        double[] extraAflossingArray = new double[30];
-        for (int i=0; i<30; i++) {
-            extraAflossingArray[i] = extraAflossing;
-        }
-        berekenBedragen(startBedrag, extraAflossingArray);
+    public double berekenAflossing(boolean annuitair, double renteBedrag, double startBedrag) {
+        return annuitair ? berekenMaandlast(startBedrag) - renteBedrag : startBedrag / 360;
     }
 
-    public void berekenBedragen(double startBedrag, double[] extraAflossing) {
-        double restBedrag = startBedrag;
+    public void berekenBedragen(boolean annuitair, Double startBedrag, Double extraAflossing) {
+        reset();
 
-        for (int i = 0; restBedrag >= 0; i++) {
-            double maandRentePercentage = berekenRente(restBedrag / startBedrag) / 100 / 12;
-            double maandRenteBedrag = maandRentePercentage * restBedrag;
-            totaleRente += maandRenteBedrag;
-            double aflossing = berekenAflossing(maandRenteBedrag, startBedrag);
-            double extraMaandAflossing = extraAflossing[0];//i / 12];
-
-            restBedragen.add(restBedrag);
-            aflossingen.add(aflossing);
-            rentes.add(maandRenteBedrag);
-            brutos.add(aflossing + maandRenteBedrag);
-
-            restBedrag -= aflossing + extraMaandAflossing / 12;
+        if (startBedrag != null) {
+            Double[] extraAflossingArray = new Double[30];
+            for (int i = 0; i < 30; i++) {
+                extraAflossingArray[i] = extraAflossing == null ? 0 : extraAflossing;
+            }
+            berekenBedragen(annuitair, startBedrag, extraAflossingArray);
         }
+    }
+
+    public void berekenBedragen(boolean annuitair, Double startBedrag, Double[] extraAflossing) {
+        reset();
+
+        if (startBedrag != null) {
+            Double restBedrag = startBedrag;
+
+            for (int i = 0; restBedrag >= 0; i++) {
+                Double maandRentePercentage = berekenRente(restBedrag / startBedrag) / 100 / 12;
+                if (offerte != null && offerte.isVerlengingMogelijk() && offerte.getVerlenging() > 0 && offerte.isVasteRente()) {
+                        //maandRentePercentage += offerte.getProvisie();
+                    totaleProvisie += offerte.getProvisie() / 12 * restBedrag;
+                }
+                Double maandRenteBedrag = maandRentePercentage * restBedrag;
+                totaleRente = totaleRente == null ? maandRenteBedrag : totaleRente + maandRenteBedrag;
+                Double aflossing = berekenAflossing(annuitair, maandRenteBedrag, startBedrag);
+                Double extraMaandAflossing = extraAflossing[0];//i / 12];
+
+                restBedragen.add(restBedrag);
+                aflossingen.add(aflossing);
+                rentes.add(maandRenteBedrag);
+                brutos.add(aflossing + maandRenteBedrag);
+
+                restBedrag -= aflossing + extraMaandAflossing / 12;
+            }
+
+            totaleRente -= extraKorting;
+        }
+    }
+
+    public void berekenProvisie(Double restBedrag) {
+        if (offerte.isVasteRente()) {
+            totaleProvisie = offerte.getProvisie() * restBedrag;
+        }
+    }
+
+    public void reset() {
+        totaleRente = null;
+        restBedragen.clear();
+        aflossingen.clear();
+        rentes.clear();
+        brutos.clear();
+    }
+
+    public void setOfferte(Offerte offerte) {
+        this.offerte = offerte;
     }
 }

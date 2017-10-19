@@ -3,6 +3,7 @@ package controller;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.TextField;
+import model.Verstrekker;
 import view.App;
 import view.VerstrekkerCreator;
 
@@ -31,7 +32,7 @@ public class MaakVerstrekkerController implements EventHandler<ActionEvent> {
             }
         }
 
-        app.getModel().addVerstrekker(true, view.getName(), rentePercentages);
+        app.getModel().getVerstrekkers().add(new Verstrekker(view.getName(), rentePercentages, null));
         app.setScene(app.overview);
 
     }

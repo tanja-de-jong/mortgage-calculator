@@ -22,9 +22,9 @@ public class ChartController implements ChangeListener {
     private Chart view;
     private Berekenaar model;
 
-    public ChartController(Berekenaar model) {
+    public ChartController(Berekenaar model, String onderwerp) {
         this.model = model;
-        this.view = new Chart(this, model);
+        this.view = new Chart(this, model, onderwerp);
     }
 
     public Chart getView() {

@@ -4,6 +4,8 @@ import controller.ChartController;
 import controller.OverviewHandlers.OverviewController;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.TabPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import model.Berekenaar;
 
@@ -17,6 +19,7 @@ public class App extends Application {
     private Stage chartStage = new Stage();
     private Stage primaryStage;
     public Scene overview;
+    public InfoTabPane tabPane;
 
     public static void main(final String[] args) {
         launch();
@@ -25,20 +28,29 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
-        model = new Berekenaar(330000);
-        chart = new ChartController(model);
-        final Scene chartScene = new Scene(chart.getView());
-        chartStage.setMaximized(true);
-        chartStage.setScene(chartScene);
+        model = new Berekenaar();
+        chart = new ChartController(model, "Bruto");
+//        final Scene chartScene = new Scene(chart.getView());
+   //     chartStage.setMaximized(true);
+ //       chartStage.setScene(chartScene);
 
         overview = new Scene(new OverviewController(this, model).getView());
-        primaryStage.setScene(overview);
+        //primaryStage.setScene(overview);
+        primaryStage = chartStage;
+        tabPane = new InfoTabPane(this, model);
+        tabPane.inputHBox.getVergelijkButton().fire();
+        chartStage.setScene(new Scene(tabPane));
         //primaryStage.setMaximized(true);
         primaryStage.show();
     }
 
     public void showChart(String type) {
         chart.getView().setType(type);
+        chartStage.show();
+    }
+
+    public void setPane() {
+        chartStage.setScene(new Scene(tabPane));
         chartStage.show();
     }
 
