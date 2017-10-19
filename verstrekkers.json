@@ -238,4 +238,37 @@
 		"tussentijdse_daling": false
 	},
 	"bankrekening": true
+}, {
+	"naam": "bijBouwe",
+	"laatst_bijgewerkt": 19-10-2017,
+	"rentes": {
+		"0.00": 1.88,
+		"0.85": 2.01,
+		"0.90": 2.12,
+		"0.95": 2.19,
+		"1.00": 2.24
+	},
+	"offerte": {
+		"looptijd": 4,
+		"verlenging": 2
+	},
+	"opmerkingen": [
+		"Risico omdat de offerte max 6 maanden geldig is."
+	]
+}, {
+	"naam": "ASR WelThuis",
+	"laatst_bijgewerkt": 19-10-2017,
+	"rentes": {
+		"0.00": 1.95,
+		"0.55": 1.96,
+		"0.65": 1.97,
+		"0.85": 2.20,
+		"1.10": 2.25
+	},
+	"aflossen": 0.15,
+	"offerte": {
+		"looptijd": 3,
+		"verlenging": 999,
+		"provisie": 0.002
+	}
 }]
