@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 public class Berekenaar {
     public List<Verstrekker> verstrekkers = new ArrayList();
 
+    public Double woningWaarde = null;
     public Double startBedrag = null;
     public Double extraAflossing = null;
     public Date hypotheekDatum = null;
@@ -107,7 +108,8 @@ public class Berekenaar {
         }
     }
 
-    public void update(Double startBedrag, Date hypotheekDatum, Date notarisDatum, String vasteExtraAflossing) {
+    public void update(Double woningWaarde, Double startBedrag, Date hypotheekDatum, Date notarisDatum, String vasteExtraAflossing) {
+        this.woningWaarde = woningWaarde;
         this.startBedrag = startBedrag;
         this.hypotheekDatum = hypotheekDatum;
         this.notarisDatum = notarisDatum;
@@ -119,7 +121,7 @@ public class Berekenaar {
         }
 
         for (Verstrekker verstrekker : verstrekkers) {
-            verstrekker.berekenBedragen(true, startBedrag, extraAflossing);
+            verstrekker.berekenBedragen(true, woningWaarde, startBedrag, extraAflossing);
         }
     }
 

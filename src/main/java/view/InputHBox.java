@@ -10,6 +10,7 @@ import javafx.scene.layout.VBox;
 
 public class InputHBox extends HBox {
 
+    private TextField woningWaarde;
     private TextField bedrag;
     private TextField datumHypotheek;
     private TextField datumPasseren;
@@ -17,18 +18,25 @@ public class InputHBox extends HBox {
     private Button vergelijkButton;
 
     public InputHBox(InputController controller) {
+        woningWaarde = new TextField("350000");
+        woningWaarde.setPromptText("Woningwaarde");
+        
         bedrag = new TextField("330000");
         bedrag.setPromptText("Hypotheekbedrag");
-         datumHypotheek = new TextField("01112017");
+         
+        datumHypotheek = new TextField("01112017");
         datumHypotheek.setPromptText("Datum hypotheek");
-         datumPasseren = new TextField("31042018");
+         
+        datumPasseren = new TextField("31042018");
         datumPasseren.setPromptText("Datum passeren");
-         extraAflossen = new TextField();
+         
+        extraAflossen = new TextField();
         extraAflossen.setPromptText("Extra aflossen");
+        
         vergelijkButton = new Button("Vergelijk");
         vergelijkButton.setOnAction(controller);
 
-        getChildren().addAll(bedrag, datumHypotheek, datumPasseren, extraAflossen, vergelijkButton);
+        getChildren().addAll(woningWaarde, bedrag, datumHypotheek, datumPasseren, extraAflossen, vergelijkButton);
     }
 
     public TextField getBedrag() {
@@ -65,5 +73,9 @@ public class InputHBox extends HBox {
 
     public ButtonBase getVergelijkButton() {
         return vergelijkButton;
+    }
+
+    public TextField getWoningWaarde() {
+        return woningWaarde;
     }
 }

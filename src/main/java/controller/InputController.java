@@ -33,13 +33,14 @@ public class InputController implements EventHandler {
     }
 
     public void handle(javafx.event.Event event) {
+        double woningWaarde = Double.parseDouble(view.getWoningWaarde().getText());
         Double startBedrag = Double.parseDouble(view.getBedrag().getText());
         Date hypotheekDatum = getDatum(view.getDatumHypotheek());
         Date notarisDatum = getDatum(view.getDatumPasseren());
         String vasteExtraAflossing = view.getExtraAflossen().getText();
         if (vasteExtraAflossing.equals("")) vasteExtraAflossing = null;
 
-        model.update(startBedrag, hypotheekDatum, notarisDatum, vasteExtraAflossing);
+        model.update(woningWaarde, startBedrag, hypotheekDatum, notarisDatum, vasteExtraAflossing);
         app.tabPane.update(app, model);
     }
 

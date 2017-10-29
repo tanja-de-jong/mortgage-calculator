@@ -70,7 +70,7 @@ public class Verstrekker {
         return annuitair ? berekenMaandlast(startBedrag) - renteBedrag : startBedrag / 360;
     }
 
-    public void berekenBedragen(boolean annuitair, Double startBedrag, Double extraAflossing) {
+    public void berekenBedragen(boolean annuitair, Double woningWaarde, Double startBedrag, Double extraAflossing) {
         reset();
 
         if (startBedrag != null) {
@@ -78,18 +78,18 @@ public class Verstrekker {
             for (int i = 0; i < 30; i++) {
                 extraAflossingArray[i] = extraAflossing == null ? 0 : extraAflossing;
             }
-            berekenBedragen(annuitair, startBedrag, extraAflossingArray);
+            berekenBedragen(annuitair, woningWaarde, startBedrag, extraAflossingArray);
         }
     }
 
-    public void berekenBedragen(boolean annuitair, Double startBedrag, Double[] extraAflossing) {
+    public void berekenBedragen(boolean annuitair, Double woningWaarde, Double startBedrag, Double[] extraAflossing) {
         reset();
 
         if (startBedrag != null) {
             Double restBedrag = startBedrag;
 
             for (int i = 0; restBedrag >= 0; i++) {
-                Double maandRentePercentage = berekenRente(restBedrag / startBedrag) / 100 / 12;
+                Double maandRentePercentage = berekenRente(restBedrag / woningWaarde) / 100 / 12;
                 if (offerte != null && offerte.isVerlengingMogelijk() && offerte.getVerlenging() > 0 && offerte.isVasteRente()) {
                         //maandRentePercentage += offerte.getProvisie();
                     totaleProvisie += offerte.getProvisie() / 12 * restBedrag;
