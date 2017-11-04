@@ -34,7 +34,7 @@ public class OverviewController implements EventHandler {
     public OverviewController(App app, Berekenaar model) {
         this.app = app;
         this.model = model;
-        view = new Overview(model, this, new NieuweVerstrekkerController(app));
+        view = new Overview(model, this);
     }
 
     public void handle(javafx.event.Event event) {
@@ -42,12 +42,12 @@ public class OverviewController implements EventHandler {
             //app.showChart("Restbedrag");
             /*TabPane tabPane = new TabPane();
 
-            Tab totaleRenteTab = new Tab("Totale rente");
+            Tab totaleRenteTab = new Tab("Totale renteGroepen");
             Label label = new Label("Verstrekkers");
             TableColumn naamColumn = new TableColumn("Naam");
             naamColumn.setCellValueFactory(
-                    new PropertyValueFactory<Verstrekker, String>("name"));
-            TableColumn totaleRenteColumn = new TableColumn("Totale rente");
+                    new PropertyValueFactory<Verstrekker, String>("naam"));
+            TableColumn totaleRenteColumn = new TableColumn("Totale renteGroepen");
             totaleRenteColumn.setCellValueFactory(
                     new PropertyValueFactory<Verstrekker, String>("totaleRente"));
 
@@ -90,7 +90,7 @@ public class OverviewController implements EventHandler {
                             if (empty) {
                                 this.setText("");
                             } else {
-                                this.setText(item.getLooptijd() + " maanden");
+                                this.setText(item.getStandaardLooptijd() + " maanden");
                             }
                         }
                     };
@@ -112,10 +112,10 @@ public class OverviewController implements EventHandler {
                         public void updateItem(final Offerte item, boolean empty)
                         {
                             super.updateItem(item, empty);
-                            if (empty || item.getVerlenging() == -1) {
+                            if (empty || item.getBenodigdeVerlenging() == -1) {
                                 this.setText("-");
                             } else {
-                                this.setText(item.getVerlenging() + " maanden");
+                                this.setText(item.getBenodigdeVerlenging() + " maanden");
                             }
                         }
                     };
@@ -180,7 +180,7 @@ public class OverviewController implements EventHandler {
             gridPane.setHgap(10);
             int row = 0;
             for (Verstrekker verstrekker : app.getModel().verstrekkers) {
-                String naam = verstrekker.name;
+                String naam = verstrekker.naam;
                 double totaleRente = verstrekker.totaleRente;
                 gridPane.add(new Button(naam), 0, row);
                 gridPane.add(new Label(String.format("€ %,6.0f", totaleRente)), 1, row);

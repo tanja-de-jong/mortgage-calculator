@@ -38,7 +38,6 @@ public class App extends Application {
         //primaryStage.setScene(overview);
         primaryStage = chartStage;
         tabPane = new InfoTabPane(this, model);
-        tabPane.inputHBox.getVergelijkButton().fire();
         chartStage.setScene(new Scene(tabPane));
         //primaryStage.setMaximized(true);
         primaryStage.show();

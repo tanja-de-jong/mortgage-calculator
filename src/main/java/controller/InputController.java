@@ -1,6 +1,6 @@
 package controller;
 
-import controller.OverviewHandlers.NieuweVerstrekkerController;
+//import controller.OverviewHandlers.NieuweVerstrekkerController;
 import javafx.collections.FXCollections;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -25,11 +25,13 @@ public class InputController implements EventHandler {
     private InputHBox view;
     private App app;
     private Berekenaar model;
+    private HypotheekTab tab;
 
-    public InputController(App app, Berekenaar model, TabPane tabPane) {
+    public InputController(App app, Berekenaar model, HypotheekTab tab) {
         this.app = app;
         this.model = model;
-        view = new InputHBox(this);
+        this.tab = tab;
+        view = new InputHBox(this, tab);
     }
 
     public void handle(javafx.event.Event event) {
@@ -41,10 +43,10 @@ public class InputController implements EventHandler {
         if (vasteExtraAflossing.equals("")) vasteExtraAflossing = null;
 
         model.update(woningWaarde, startBedrag, hypotheekDatum, notarisDatum, vasteExtraAflossing);
-        app.tabPane.update(app, model);
+        app.tabPane.update();
     }
 
-    public Date getDatum(TextField veld) {
+    public static Date getDatum(TextField veld) {
         Date result = null;
         String veldWaarde = veld.getText();
         if (!veldWaarde.equals("")) {

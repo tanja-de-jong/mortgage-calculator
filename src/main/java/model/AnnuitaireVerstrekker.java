@@ -7,8 +7,8 @@ import java.util.Map;
  */
 /*public class AnnuitaireVerstrekker extends Verstrekker {
 
-    public AnnuitaireVerstrekker(String name, Map<Double, Double> renteGroepen) {
-        super(name, renteGroepen);
+    public AnnuitaireVerstrekker(String naam, Map<Double, Double> renteGroepen) {
+        super(naam, renteGroepen);
     }
 
     public double berekenAflossing(double renteBedrag, double startBedrag) {

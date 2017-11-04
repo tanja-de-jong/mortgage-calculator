@@ -1,12 +1,14 @@
 package view;
 
 import controller.InputController;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonBase;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+
+import java.awt.*;
 
 public class InputHBox extends HBox {
 
@@ -15,9 +17,10 @@ public class InputHBox extends HBox {
     private TextField datumHypotheek;
     private TextField datumPasseren;
     private TextField extraAflossen;
+    private CheckBox toonOnmogelijk;
     private Button vergelijkButton;
 
-    public InputHBox(InputController controller) {
+    public InputHBox(InputController controller, HypotheekTab tab) {
         woningWaarde = new TextField("350000");
         woningWaarde.setPromptText("Woningwaarde");
         
@@ -32,11 +35,18 @@ public class InputHBox extends HBox {
          
         extraAflossen = new TextField();
         extraAflossen.setPromptText("Extra aflossen");
+
+        toonOnmogelijk = new CheckBox("Toon onmogelijk");
+        toonOnmogelijk.setSelected(true);
+        // 2. Set the filter Predicate whenever the filter changes.
+        toonOnmogelijk.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            tab.setData(tab.toonVerstrekkers(newValue));
+        });
         
         vergelijkButton = new Button("Vergelijk");
         vergelijkButton.setOnAction(controller);
 
-        getChildren().addAll(woningWaarde, bedrag, datumHypotheek, datumPasseren, extraAflossen, vergelijkButton);
+        getChildren().addAll(woningWaarde, bedrag, datumHypotheek, datumPasseren, extraAflossen, toonOnmogelijk, vergelijkButton);
     }
 
     public TextField getBedrag() {
@@ -69,6 +79,10 @@ public class InputHBox extends HBox {
 
     public void setExtraAflossen(TextField extraAflossen) {
         this.extraAflossen = extraAflossen;
+    }
+
+    public CheckBox getToonOnmogelijk() {
+        return toonOnmogelijk;
     }
 
     public ButtonBase getVergelijkButton() {

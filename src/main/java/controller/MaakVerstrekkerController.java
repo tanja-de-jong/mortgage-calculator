@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * Created by Tanja on 16-9-2017.
  */
-public class MaakVerstrekkerController implements EventHandler<ActionEvent> {
+/*public class MaakVerstrekkerController implements EventHandler<ActionEvent> {
 
     private App app;
     private VerstrekkerCreator view = new VerstrekkerCreator(this);
@@ -32,7 +32,7 @@ public class MaakVerstrekkerController implements EventHandler<ActionEvent> {
             }
         }
 
-        app.getModel().getVerstrekkers().add(new Verstrekker(view.getName(), rentePercentages, null));
+        app.getModel().getVerstrekkers().add(new Verstrekker(view.getName(), null, rentePercentages, null));
         app.setScene(app.overview);
 
     }
@@ -41,3 +41,4 @@ public class MaakVerstrekkerController implements EventHandler<ActionEvent> {
         return view;
     }
 }
+*/

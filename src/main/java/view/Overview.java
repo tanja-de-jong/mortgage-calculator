@@ -1,6 +1,6 @@
 package view;
 
-import controller.OverviewHandlers.NieuweVerstrekkerController;
+//import controller.OverviewHandlers.NieuweVerstrekkerController;
 import controller.OverviewHandlers.OverviewController;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -22,7 +22,7 @@ public class Overview extends VBox {
     Button vergelijkButton = new Button("Vergelijk");
     OverviewController controller;
 
-    public Overview(Berekenaar model, OverviewController controller, NieuweVerstrekkerController nieuweVerstrekkerController) {
+    public Overview(Berekenaar model, OverviewController controller) {
         HBox input = new HBox(10);
         TextField bedrag = new TextField();
         bedrag.setPromptText("Hypotheekbedrag");
@@ -36,11 +36,11 @@ public class Overview extends VBox {
 
         getChildren().addAll(bedrag, datumHypotheek, datumPasseren, extraAflossen, vergelijkButton);
 
-        Button nieuweVerstrekker = new Button("Nieuwe verstrekker");
-        nieuweVerstrekker.setOnAction(nieuweVerstrekkerController);
-        getChildren().add(nieuweVerstrekker);
+        //Button nieuweVerstrekker = new Button("Nieuwe verstrekker");
+        //nieuweVerstrekker.setOnAction(nieuweVerstrekkerController);
+        //getChildren().add(nieuweVerstrekker);
 
-        for (String type : model.verstrekkers.get(0).data.keySet()) {
+        for (String type : model.verstrekkers.get(0).getData().keySet()) {
             Button button = new Button(type);
             button.setOnAction(controller);
             buttons.put(button, type);

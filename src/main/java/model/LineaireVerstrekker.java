@@ -7,8 +7,8 @@ import java.util.Map;
  */
 /*public class LineaireVerstrekker extends Verstrekker {
 
-    public LineaireVerstrekker(String name, Map<Double, Double> renteGroepen) {
-        super(name, renteGroepen);
+    public LineaireVerstrekker(String naam, Map<Double, Double> renteGroepen) {
+        super(naam, renteGroepen);
     }
 
     public double berekenAflossing(double renteBedrag, double startBedrag) {

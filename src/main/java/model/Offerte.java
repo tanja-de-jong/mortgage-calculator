@@ -1,6 +1,5 @@
 package model;
 
-import java.util.Calendar;
 import java.util.Date;
 
 public class Offerte {
@@ -13,33 +12,35 @@ public class Offerte {
 
     public Verstrekker verstrekker;
 
-    private int looptijd;
-    private Integer verlenging;
-    private boolean tussentijdseDaling;
+    private int standaardLooptijd;
+    private Integer mogelijkeVerlenging;
+    private boolean tussentijdseDalingMogelijk;
     private Double provisie;
     private boolean vasteRente;
     private boolean kostenBijRenteStijging;
 
-    public Offerte(Verstrekker verstrekker, int looptijd, Integer verlenging, boolean tussentijdseDaling, Double provisie, boolean vasteRente, boolean kostenBijRenteStijging) {
+    public Offerte() {}
+
+    public Offerte(Verstrekker verstrekker, int standaardLooptijd, Integer mogelijkeVerlenging, boolean tussentijdseDalingMogelijk, Double provisie, boolean vasteRente, boolean kostenBijRenteStijging) {
         this.verstrekker = verstrekker;
-        this.looptijd = looptijd;
-        this.verlenging = verlenging;
-        this.tussentijdseDaling = tussentijdseDaling;
+        this.standaardLooptijd = standaardLooptijd;
+        this.mogelijkeVerlenging = mogelijkeVerlenging;
+        this.tussentijdseDalingMogelijk = tussentijdseDalingMogelijk;
         this.provisie = provisie;
         this.vasteRente = vasteRente;
         this.kostenBijRenteStijging = kostenBijRenteStijging;
     }
 
-    public int getLooptijd() {
-        return looptijd;
+    public int getStandaardLooptijd() {
+        return standaardLooptijd;
     }
 
-    public Integer getVerlenging() {
-        return verlenging;
+    public Integer getMogelijkeVerlenging() {
+        return mogelijkeVerlenging;
     }
 
-    public boolean isTussentijdseDaling() {
-        return tussentijdseDaling;
+    public boolean isTussentijdseDalingMogelijk() {
+        return tussentijdseDalingMogelijk;
     }
 
     public Double getProvisie() {
@@ -54,13 +55,42 @@ public class Offerte {
         return kostenBijRenteStijging;
     }
 
-    public boolean isVerlengingMogelijk() {
-        return verlenging == null ? false : getVerlenging() <= verlenging;
+    public boolean isVerlengingMogelijk(Date hypotheekDatum, Date notarisDatum) {
+        return mogelijkeVerlenging == null ? false : getBenodigdeVerlenging(hypotheekDatum, notarisDatum) <= mogelijkeVerlenging;
     }
 
-    public double getVerlenging(Date hypotheekDatum, Date notarisDatum) {
+    public double getBenodigdeVerlenging(Date hypotheekDatum, Date notarisDatum) {
+        if (hypotheekDatum == null || notarisDatum == null) return 0;
         double aantalMaanden = (double) (notarisDatum.getTime() - hypotheekDatum.getTime()) / (24 * 60 * 60 * 1000) / 30;
-        return aantalMaanden - looptijd;
+        return aantalMaanden - standaardLooptijd;
+    }
+
+    public void setVerstrekker(Verstrekker verstrekker) {
+        this.verstrekker = verstrekker;
+    }
+
+    public void setStandaardLooptijd(int standaardLooptijd) {
+        this.standaardLooptijd = standaardLooptijd;
+    }
+
+    public void setMogelijkeVerlenging(Integer mogelijkeVerlenging) {
+        this.mogelijkeVerlenging = mogelijkeVerlenging;
+    }
+
+    public void setTussentijdseDalingMogelijk(boolean tussentijdseDalingMogelijk) {
+        this.tussentijdseDalingMogelijk = tussentijdseDalingMogelijk;
+    }
+
+    public void setProvisie(Double provisie) {
+        this.provisie = provisie;
+    }
+
+    public void setVasteRente(boolean vasteRente) {
+        this.vasteRente = vasteRente;
+    }
+
+    public void setKostenBijRenteStijging(boolean kostenBijRenteStijging) {
+        this.kostenBijRenteStijging = kostenBijRenteStijging;
     }
 
     public double berekenKostenVerlenging(Date hypotheekDatum, Date notarisDatum, Double bedrag) {
@@ -68,14 +98,14 @@ public class Offerte {
 
         if (hypotheekDatum == null || notarisDatum == null) {
             result = DATUM_NIET_INGEVULD;
-        } else if (verlenging == null) {
+        } else if (mogelijkeVerlenging == null) {
             result = VERLENGING_ONBEKEND;
         } else {
-            double maandenTeLang = getVerlenging(hypotheekDatum, notarisDatum);
+            double maandenTeLang = getBenodigdeVerlenging(hypotheekDatum, notarisDatum);
 
             if (maandenTeLang <= 0) { return result; }
 
-            if (maandenTeLang > verlenging) {
+            if (maandenTeLang > mogelijkeVerlenging) {
                 result = VERLENGING_NIET_MOGELIJK;
             } else if (provisie == null) { // TODO: 14/10/2017
                 result = PROVISIE_ONBEKEND;
@@ -92,4 +122,6 @@ public class Offerte {
 
         return result;
     }
+
+
 }

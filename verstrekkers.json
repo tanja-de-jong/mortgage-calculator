@@ -1,274 +1,827 @@
-[{
-	"naam": "Rabobank Basis",
-	"laatst_bijgewerkt": "09-10-2017",
-	"rentes": {
-		"0.9": 2.4,
-		"0.675": 2.1,
-		"0.0": 1.7
-	},
-	"offerte": {
-		"looptijd": 6,
-		"verlenging": 0
-	},
-	"aflossen": 0.1,
-	"bankrekening": true
-}, {
-	"naam": "Rabobank Plus",
-	"laatst_bijgewerkt": "09-10-2017",
-	"rentes": {
-		"0.900": 2.65,
-		"0.675": 2.35,
-		"0.000": 1.95
-	},
-	"offerte": {
-		"looptijd": 12,
-		"verlenging": 0
-	},
-	"aflossen": 0.2,
-	"bankrekening": true
-}, {
-	"naam": "ING",
-	"laatst_bijgewerkt": "09-10-2017",
-	"rentes": {
-		"1.01": 2.94,
-		"0.95": 2.29,
-		"0.90": 2.09,
-		"0.85": 2.04,
-		"0.80": 1.94,
-		"0.75": 1.89,
-		"0.70": 1.84,
-		"0.65": 1.79,
-		"0.60": 1.74,
-		"0.55": 1.69,
-		"0.00": 1.64
-	},
-	"extra_korting": 3086.87,
-	"offerte": {
-		"looptijd": 6.5,
-		"verlenging": 6,
-		"provisie": 0.002,
-		"vaste_rente": false
-	},
-	"aflossen": 0.1,
-	"bankrekening": true
-}, {
-	"naam": "ING vanaf 16-10-2017",
-	"laatst_bijgewerkt": "16-10-2017",
-	"rentes": {
-		"1.01": 2.99,
-		"0.95": 2.34,
-		"0.90": 2.14,
-		"0.85": 2.09,
-		"0.80": 1.99,
-		"0.75": 1.94,
-		"0.70": 1.89,
-		"0.65": 1.84,
-		"0.60": 1.79,
-		"0.55": 1.74,
-		"0.00": 1.69
-	},
-	"extra_korting": 3086.87,
-	"offerte": {
-		"looptijd": 6.5,
-		"verlenging": 6,
-		"provisie": 0.002,
-		"vaste_rente": false
-	},
-	"aflossen": 0.1,
-	"bankrekening": true
-}, {
-	"naam": "Centraal Beheer",
-	"laatst_bijgewerkt": "09-10-2017",
-	"rentes": {
-		"1.01": 3.05,
-		"1.00": 2.21,
-		"0.95": 2.17,
-		"0.90": 2.09,
-		"0.85": 2.07,
-		"0.80": 2.06,
-		"0.70": 2.04,
-		"0.60": 2.02,
-		"0.00": 1.98
-	},
-	"offerte": {
-		"looptijd": 3,
-		"verlenging": 6,
-		"provisie": 0.0025,
-		"vaste_rente": false
-	},
-	"aflossen": 0.2,
-	"bankrekening": false
-}, {
-	"naam": "SNS",
-	"laatst_bijgewerkt": "09-10-2017",
-	"rentes": {
-		"1.06": 2.8,
-		"1.01": 2.7,
-		"0.95": 2.2,
-		"0.90": 2.15,
-		"0.80": 2.05,
-		"0.70": 1.95,
-		"0.60": 1.9,
-		"0.50": 1.85,
-		"0.40": 1.8,
-		"0.00": 1.75
-	},
-	"offerte": {
-		"looptijd": 3,
-		"verlenging": 6,
-		"provisie": 0.001,
-		"vaste_rente": true
-	},
-	"aflossen": 0.2,
-	"bankrekening": true
-}, {
-	"naam": "ABN AMRO Budget",
-	"laatst_bijgewerkt": "09-10-2017",
-	"rentes": {
-		"0.85": 2.38,
-		"0.65": 1.98,
-		"0.0": 1.78
-	},
-	"offerte": {
-		"looptijd": 3,
-		"verlenging": 0,
-		"tussentijdse_daling": false
-	},
-	"aflossen": 0.1,
-	"bankrekening": true
-}, {
-	"naam": "ABN AMRO Woning",
-	"laatst_bijgewerkt": "09-10-2017",
-	"rentes": {
-		"0.85": 2.48,
-		"0.65": 2.08,
-		"0.0": 1.88
-	},
-	"offerte": {
-		"looptijd": 3,
-		"verlenging": 6,
-		"tussentijdse_daling": true
-	},
-	"aflossen": 0.1,
-	"bankrekening": true,
-	"opmerkingen": [
-		"Nadat de rentevaste periode afloopt, daalt de rente van het nieuwe aanbod mee totdat de nieuwe rentevaste periode ingaat."
-	]
-}, {
-	"naam": "ABN AMRO Bud. Duurz.",
-	"laatst_bijgewerkt": "09-10-2017",
-	"rentes": {
-		"0.85": 2.18,
-		"0.65": 1.78,
-		"0.0": 1.58
-	},
-	"offerte": {
-		"looptijd": 3,
-		"verlenging": 0,
-		"tussentijdse_daling": false
-	},
-	"aflossen": 0.1,
-	"bankrekening": true
-}, {
-	"naam": "ABN AMRO Won. Duurz.",
-	"laatst_bijgewerkt": "09-10-2017",
-	"rentes": {
-		"0.85": 2.28,
-		"0.65": 1.88,
-		"0.0": 1.68
-	},
-	"offerte": {
-		"looptijd": 3,
-		"verlenging": 6,
-		"tussentijdse_daling": true
-	},
-	"aflossen": 0.1,
-	"bankrekening": true,
-	"opmerkingen": [
-		"Nadat de rentevaste periode afloopt, daalt de rente van het nieuwe aanbod mee totdat de nieuwe rentevaste periode ingaat."
-	]
-}, {
-	"naam": "Woonfonds",
-	"laatst_bijgewerkt": "09-10-2017",
-	"rentes": {
-		"0.00": 2.07,
-		"0.60": 2.11,
-		"0.80": 2.13,
-		"1.00": 2.21,
-		"1.10": 2.49
-	},
-	"offerte": {
-		"looptijd": 4,
-		"verlenging": 5,
-		"alleen_kosten_bij_rentestijging": true,
-
-		"tussentijdse_daling": false
-	},
-	"aflossen": 0.15,
-	"bankrekening": false,
-	"opmerkingen": [
-		"Het lijkt erop dat de risicoklasse alleen aangepast kan worden met een nieuw taxatierapport."
-	]
-}, {
-	"naam": "Nationale Nederlanden",
-	"laatst_bijgewerkt": "18-10-2017",
-	"rentes": {
-		"0.00": 2.15
-	}
-}, {
-	"naam": "Regiobank Budget",
-	"laatst_bijgewerkt": "18-10-2017",
-	"rentes": {
-		"0.00": 1.69,
-		"0.40": 1.74,
-		"0.50": 1.79,
-		"0.60": 1.84,
-		"0.70": 1.94,
-		"0.80": 1.99,
-		"0.90": 2.09,
-		"0.95": 2.19,
-		"1.01": 2.59,
-		"1.06": 2.84
-	},
-	"offerte": {
-		"looptijd": 3,
-		"verlenging": 1000,
-		"provisie": 0.001,
-		"vaste_rente": true,
-		"tussentijdse_daling": false
-	},
-	"bankrekening": true
-}, {
-	"naam": "bijBouwe",
-	"laatst_bijgewerkt": 19-10-2017,
-	"rentes": {
-		"0.00": 1.88,
-		"0.85": 2.01,
-		"0.90": 2.12,
-		"0.95": 2.19,
-		"1.00": 2.24
-	},
-	"offerte": {
-		"looptijd": 4,
-		"verlenging": 2
-	},
-	"opmerkingen": [
-		"Risico omdat de offerte max 6 maanden geldig is."
-	]
-}, {
-	"naam": "ASR WelThuis",
-	"laatst_bijgewerkt": 19-10-2017,
-	"rentes": {
-		"0.00": 1.95,
-		"0.55": 1.96,
-		"0.65": 1.97,
-		"0.85": 2.20,
-		"1.10": 2.25
-	},
-	"aflossen": 0.15,
-	"offerte": {
-		"looptijd": 3,
-		"verlenging": 999,
-		"provisie": 0.002
-	}
-}]
+[
+  {
+    "actuele_rente_url": "https://www.moneyou.nl/hypotheek/renteoverzicht/rentetarieven",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 2,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 0,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": ["Lijkt alleen online af te sluiten"],
+    "rente_groepen": {
+      "0.0": 1.72,
+      "90.0": 2.07,
+      "95.0": 2.27,
+      "85.0": 1.97,
+      "65.0": 1.92
+    },
+    "extra_korting": 0,
+    "naam": "Moneyou",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.ing.nl/particulier/hypotheken/actuele-hypotheekrente/index.html?gclid=CjwKCAjw-NXPBRB4EiwAVNRLKpc5zelxBPDIFlBmYGRAxTBU-0CpvtDYkkaIUWyUdsJD3t3-dxTq6RoCAKcQAvD_BwEhttps://www.ing.nl/particulier/hypotheken/actuele-hypotheekrente/index.html?gclid=CjwKCAjw-NXPBRB4EiwAVNRLKpc5zelxBPDIFlBmYGRAxTBU-0CpvtDYkkaIUWyUdsJD3t3-dxTq6RoCAKcQAvD_BwE",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 6,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 6,
+      "provisie": 0.002,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": ["Geen rente over bouwdepot"],
+    "rente_groepen": {
+      "80.0": 2.04,
+      "0.0": 1.74,
+      "70.0": 1.94,
+      "90.0": 2.14,
+      "95.0": 2.34,
+      "60.0": 1.84,
+      "85.0": 2.09,
+      "65.0": 1.89,
+      "75.0": 1.99,
+      "55.0": 1.79,
+      "101.0": 3.04
+    },
+    "extra_korting": 3086.87,
+    "naam": "ING",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.abnamro.nl/nl/prive/hypotheken/actuele-hypotheekrente/hypotheekrente-overzicht.html",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 3,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 0,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "0.0": 1.63,
+      "85.0": 2.18,
+      "65.0": 1.83
+    },
+    "extra_korting": 0,
+    "naam": "ABN AMRO Bud. Duurz.",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://meriushypotheken.nl/rente-en-tarieven",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 4,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 4,
+      "provisie": 0.0025,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [
+      "Kosten voor verlenging worden alleen in rekening gebracht als rente hoger is geworden",
+      "Na extra aflossen wordt maandbedrag verlaagd",
+      "25% boetevrij aflossen",
+      "Laagste rente: offerte of passeren"
+    ],
+    "rente_groepen": {
+      "80.0": 2.00000000000001,
+      "0.0": 1.8,
+      "95.0": 2.25,
+      "60.0": 1.85
+    },
+    "extra_korting": 0,
+    "naam": "Merius",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.blg.nl/rente/rente/actuele-rente.html?gclid=Cj0KCQjwp_DPBRCZARIsAGOZYBTvYObORovOuvBtS14fwS6gBdhnOrymyDuMh37Nu6jxct82aCubrQ4aAp_OEALw_wcB&gclsrc=aw.ds",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 3,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 6,
+      "provisie": 0.0025,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [
+      "10% boetevrij aflossen",
+      "OVR verplicht",
+      "Rente is offerterente"
+    ],
+    "rente_groepen": {
+      "0.0": 1.75,
+      "88.0": 2.2,
+      "66.0": 1.85
+    },
+    "extra_korting": 0,
+    "naam": "BLG Wonen",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.hypotheek-rentetarieven.nl/hypotheekrente/maatschappijen/hypotrust?utm_source=google&utm_medium=cpc&utm_campaign=verstrekkers&gclid=EAIaIQobChMI_tv2nfWi1wIV0DLTCh2GbQN8EAAYASAAEgKn3_D_BwE",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 4,
+      "vaste_rente": false,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [
+      "Lening meenemen naar volgende woning via meeneemregeling",
+      "15% van de lening boetevrij aflossen per jaar",
+      "Rentegarantie: als de rente op de dag van passeren lager is, geldt deze",
+      "Argenta ORV vereist"
+    ],
+    "rente_groepen": {
+      "0.0": 1.7,
+      "85.0": 2.15,
+      "65.0": 1.85
+    },
+    "extra_korting": 0,
+    "naam": "Hypotrust OK",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.argenta.nl/hypotheek/hypotheekrente-overzicht",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 0,
+      "vaste_rente": false,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": ["Inclusief 0.1% kortingen voor overlijdensrisicoverzekering bij Argenta"],
+    "rente_groepen": {
+      "0.0": 1.7,
+      "108.0": 2.3,
+      "85.0": 2.15,
+      "65.0": 1.85
+    },
+    "extra_korting": 0,
+    "naam": "Argenta",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.regiobank.nl/particulier/home/producten/hypotheken/hypotheektarieven.html",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 3,
+      "vaste_rente": true,
+      "mogelijke_verlenging": 999,
+      "provisie": 0.001,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "80.0": 1.99,
+      "106.0": 2.84,
+      "0.0": 1.69,
+      "70.0": 1.94,
+      "90.0": 2.09,
+      "95.0": 2.19,
+      "50.0": 1.79,
+      "60.0": 1.84,
+      "40.0": 1.74,
+      "101.0": 2.59
+    },
+    "extra_korting": 0,
+    "naam": "Regiobank Budget",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.snsbank.nl/particulier/hypotheken/hypotheekrente.html",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 3,
+      "vaste_rente": true,
+      "mogelijke_verlenging": 6,
+      "provisie": 0.001,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "80.0": 2.05,
+      "106.0": 2.8,
+      "0.0": 1.7,
+      "70.0": 1.9,
+      "90.0": 2.15,
+      "95.0": 2.2,
+      "50.0": 1.8,
+      "60.0": 1.85,
+      "40.0": 1.75,
+      "101.0": 2.7
+    },
+    "extra_korting": 0,
+    "naam": "SNS",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.obvion.nl/Hypotheekrente/Actuele-hypotheekrente-Obvion.htm",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 3,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 3,
+      "provisie": 0.25,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": ["Tarief van offerte"],
+    "rente_groepen": {
+      "80.0": 1.99,
+      "0.0": 1.79,
+      "70.0": 1.94,
+      "90.0": 2.39,
+      "55.0": 1.89,
+      "101.0": 2.49
+    },
+    "extra_korting": 0,
+    "naam": "Obvion Compact",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.bijbouwe.nl/online-hypotheek/hypotheekrente-tarieven.aspx",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 4,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 2,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "0.0": 1.88,
+      "90.0": 2.08,
+      "95.0": 2.17,
+      "85.0": 1.99,
+      "100.0": 2.19
+    },
+    "extra_korting": 0,
+    "naam": "BijBouwe",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.abnamro.nl/nl/prive/hypotheken/actuele-hypotheekrente/hypotheekrente-overzicht.html",
+    "offerte": {
+      "tussentijdse_daling": true,
+      "standaard_looptijd": 3,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 6,
+      "provisie": 0,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "0.0": 1.73,
+      "85.0": 2.28,
+      "65.0": 1.93
+    },
+    "extra_korting": 0,
+    "naam": "ABN AMRO Won. Duurz.",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "www.rabobank.nl/particulieren/hypotheek/hypotheekrente/",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 6,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 0,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "67.5": 2.1,
+      "0.0": 1.7,
+      "90.0": 2.4
+    },
+    "extra_korting": 0,
+    "naam": "Rabobank Basis",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.deltalloyd.nl/prive/hypotheek/hypotheekrente/index.jsp",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 4,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 0,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "0.0": 1.75,
+      "90.0": 2.25,
+      "50.0": 1.85,
+      "75.0": 2.05,
+      "100.0": 2.4,
+      "110.0": 2.7
+    },
+    "extra_korting": 0,
+    "naam": "Delta Lloyd Budget Hypotheek",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.florius.nl/advies/hypotheekrente/rentetarieven",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 3,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 3,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "0.0": 1.83,
+      "90.0": 2.33,
+      "85.0": 2.08,
+      "65.0": 1.98,
+      "101.0": 2.53
+    },
+    "extra_korting": 0,
+    "naam": "Florius Profijt drie + drie Hypotheek",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.hypotheek-rentetarieven.nl/hypotheekrente/maatschappijen/hypotrust?periode=10&tarief=1,70&banknaam=Hypotrust#rente_10",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 3,
+      "vaste_rente": false,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": ["Offerterente is passeerrente"],
+    "rente_groepen": {"0.0": 1.88},
+    "extra_korting": 0,
+    "naam": "Hypotrust Comfort Profijt",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.asr.nl/hypotheek/hypotheekrente",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 3,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 999,
+      "provisie": 0.002,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "0.0": 1.9,
+      "95.0": 2.2,
+      "85.0": 2.15,
+      "65.0": 1.92,
+      "55.0": 1.91
+    },
+    "extra_korting": 0,
+    "naam": "ASR WelThuis",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.munthypotheken.nl/renteoverzicht/",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 3,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 3,
+      "provisie": 0.25,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": ["Vergoeding bouwdepot: -1%"],
+    "rente_groepen": {
+      "80.0": 2.03,
+      "0.0": 1.93,
+      "90.0": 2.28,
+      "60.0": 1.93
+    },
+    "extra_korting": 0,
+    "naam": "Munt Hypotheken",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.abnamro.nl/nl/prive/hypotheken/actuele-hypotheekrente/hypotheekrente-overzicht.html",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 3,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 0,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "0.0": 1.83,
+      "85.0": 2.38,
+      "65.0": 2.03
+    },
+    "extra_korting": 0,
+    "naam": "ABN AMRO Budget",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.deltalloyd.nl/prive/hypotheek/hypotheekrente/index.jsp",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 2,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 4,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "0.0": 1.85,
+      "90.0": 2.35,
+      "50.0": 1.95,
+      "75.0": 2.15,
+      "100.0": 2.5,
+      "110.0": 2.8
+    },
+    "extra_korting": 0,
+    "naam": "Delta Lloyd DrieSterrenHypotheek",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.florius.nl/advies/hypotheekrente/rentetarieven",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 12,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 0,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "0.0": 1.93,
+      "90.0": 2.43,
+      "85.0": 2.18,
+      "65.0": 2.08,
+      "101.0": 2.63
+    },
+    "extra_korting": 0,
+    "naam": "Florius Profijt twaalf Hypotheek",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.hypotheek-rentetarieven.nl/hypotheekrente/maatschappijen/hypotrust?periode=10&tarief=1,70&banknaam=Hypotrust#rente_10",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 3,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 3,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": ["Laagste rente: offerterente of passeerrente"],
+    "rente_groepen": {"0.0": 1.98},
+    "extra_korting": 0,
+    "naam": "Hypotrust Comfort Standaard",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.centraalbeheer.nl/hypotheek/Paginas/rente.aspx",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 3,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 6,
+      "provisie": 0.0025,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "80.0": 2.06,
+      "0.0": 1.98,
+      "70.0": 2.04,
+      "90.0": 2.09,
+      "95.0": 2.17,
+      "60.0": 2.02,
+      "85.0": 2.07,
+      "100.0": 2.21,
+      "101.0": 3.05
+    },
+    "extra_korting": 0,
+    "naam": "Centraal Beheer",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.hypotheek-rentetarieven.nl/hypotheekrente/maatschappijen/venn-hypotheken?periode=10&tarief=1,99&banknaam=Venn+Hypotheken#rente_10",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 0,
+      "vaste_rente": false,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {"0.0": 1.99},
+    "extra_korting": 0,
+    "naam": "Venn",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.obvion.nl/Hypotheekrente/Actuele-hypotheekrente-Obvion.htm",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 4,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 4,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": ["Laagste tarief van offerte of passeren"],
+    "rente_groepen": {
+      "80.0": 2.19,
+      "0.0": 1.99,
+      "70.0": 2.14,
+      "90.0": 2.59,
+      "55.0": 2.09,
+      "101.0": 2.69
+    },
+    "extra_korting": 0,
+    "naam": "Obvion Basis",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.nibcdirect.nl/hypotheek/nibcdirect/",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 4,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 0,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": ["15% van oorspronkelijk leningdeel boetevrij aflossen"],
+    "rente_groepen": {
+      "80.0": 2.23,
+      "106.0": 2.83,
+      "0.0": 2.03,
+      "95.0": 2.43,
+      "65.0": 2.13
+    },
+    "extra_korting": 0,
+    "naam": "NIBC Direct Hypotheek",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.abnamro.nl/nl/prive/hypotheken/actuele-hypotheekrente/hypotheekrente-overzicht.html",
+    "offerte": {
+      "tussentijdse_daling": true,
+      "standaard_looptijd": 3,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 6,
+      "provisie": 0,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "0.0": 1.93,
+      "85.0": 2.48,
+      "65.0": 2.13
+    },
+    "extra_korting": 0,
+    "naam": "ABN AMRO Woning",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://attens.nl/hypotheken/actuele-hypotheekrentes",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 0,
+      "vaste_rente": false,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "80.0": 2.1,
+      "0.0": 2.05,
+      "90.0": 2.24,
+      "60.0": 2.1
+    },
+    "extra_korting": 0,
+    "naam": "Attens",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.nn.nl/Particulier/Hypotheken/Hypotheekrente.htm",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 0,
+      "vaste_rente": false,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "0.0": 2.15,
+      "90.0": 2.55
+    },
+    "extra_korting": 0,
+    "naam": "Nationale Nederlanden",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.rabobank.nl/particulieren/hypotheek/hypotheekrente/?utm_campaign=pa-hypotheken-wonen-&utm_source=google&utm_medium=sea_google_search&utm_content=351-352-7231|sitelink-actuele-hypotheekrente&utm_term=rabobank%20hypotheekrente|e&utm_conn_number=1&utm_conn_id=19446-F-18413900088A196076988693kwd-493749487",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 12,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 0,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "67.5": 2.35,
+      "0.0": 1.95,
+      "90.0": 2.65
+    },
+    "extra_korting": 0,
+    "naam": "Rabobank Plus",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.woonfonds.nl/actuele-rente#",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 4,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 5,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "80.0": 2.13,
+      "0.0": 2.07,
+      "60.0": 2.11,
+      "100.0": 2.21,
+      "101.0": 2.49
+    },
+    "extra_korting": 0,
+    "naam": "Woonfonds",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "http://www.iqwoon.nl/jouw-hypotheek#alle-tarieven",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 4,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 4,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [
+      "20% van oorsponkelijke lening extra afbetalen",
+      "Laagste rente van offerte en passeren"
+    ],
+    "rente_groepen": {
+      "80.0": 2.95,
+      "0.0": 1.87,
+      "95.0": 3.05,
+      "65.0": 1.94
+    },
+    "extra_korting": 0,
+    "naam": "IQWOON",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.nibcdirect.nl/hypotheek/nibcdirect/",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 9,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 0,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "80.0": 2.33,
+      "106.0": 2.93,
+      "0.0": 2.13,
+      "95.0": 2.53,
+      "65.0": 2.23
+    },
+    "extra_korting": 0,
+    "naam": "NIBC Direct Extra",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://syntrusachmeahypotheken.nl/rente",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 4,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 0,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": ["Rente van het renteaanbod"],
+    "rente_groepen": {
+      "80.0": 2.45,
+      "0.0": 2.05,
+      "90.0": 2.75,
+      "60.0": 2.25
+    },
+    "extra_korting": 0,
+    "naam": "Syntrus Achmea Basis",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.deltalloyd.nl/prive/hypotheek/hypotheekrente/index.jsp",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 3,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 3,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "0.0": 2.15,
+      "95.0": 2.55,
+      "85.0": 2.45,
+      "65.0": 2.25,
+      "75.0": 2.35
+    },
+    "extra_korting": 0,
+    "naam": "Delta Lloyd Plus Hypotheek",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.obvion.nl/Hypotheekrente/Actuele-hypotheekrente-Obvion.htm",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 4,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 8,
+      "provisie": 0,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": ["Laagste tarief van gehele offerteperiode"],
+    "rente_groepen": {
+      "80.0": 2.39,
+      "0.0": 2.19,
+      "70.0": 2.34,
+      "90.0": 2.79,
+      "55.0": 2.29,
+      "101.0": 2.89
+    },
+    "extra_korting": 0,
+    "naam": "Obvion",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://syntrusachmeahypotheken.nl/rente",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 9,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 0,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": ["Rente van renteaanbod of passeren"],
+    "rente_groepen": {
+      "80.0": 2.65,
+      "0.0": 2.25,
+      "90.0": 2.95,
+      "60.0": 2.45
+    },
+    "extra_korting": 0,
+    "naam": "Syntrus Achmea Comfort",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.aegon.nl/particulier/hypotheek/actuele-hypotheekrente",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 6,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 6,
+      "provisie": 0.2,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [],
+    "rente_groepen": {
+      "67.5": 2.34,
+      "81.0": 2.74,
+      "0.0": 2.24
+    },
+    "extra_korting": 0,
+    "naam": "Aegon ",
+    "laatstBijgewerkt": ""
+  },
+  {
+    "actuele_rente_url": "https://www.nibcdirect.nl/hypotheek/nibcdirect/",
+    "offerte": {
+      "tussentijdse_daling": false,
+      "standaard_looptijd": 3,
+      "vaste_rente": false,
+      "mogelijke_verlenging": 3,
+      "kosten_bij_rentestijging": false
+    },
+    "opmerkingen": [
+      "100% boetevrij aflossen",
+      "Tariefklasse gaat automatisch omlaag"
+    ],
+    "rente_groepen": {
+      "80.0": 2.66,
+      "0.0": 2.51,
+      "70.0": 2.61,
+      "90.0": 2.71,
+      "60.0": 2.56
+    },
+    "extra_korting": 0,
+    "naam": "Reaal Lekker Wonen Hypotheek",
+    "laatstBijgewerkt": ""
+  }
+]

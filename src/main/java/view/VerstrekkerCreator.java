@@ -1,54 +1,115 @@
 package view;
 
-import controller.MaakVerstrekkerController;
-import javafx.geometry.Insets;
+import com.sun.deploy.util.StringUtils;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.*;
+import model.Berekenaar;
+import model.Verstrekker;
 
-import java.util.HashMap;
-import java.util.Map;
+import javax.xml.soap.Text;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by Tanja on 16-9-2017.
  */
-public class VerstrekkerCreator extends GridPane {
+public class VerstrekkerCreator extends VBox {
 
-    TextField name = new TextField();
-    Map<TextField, TextField> rentePercentages = new HashMap();
+    App app;
+    InfoTabPane parent;
+    Verstrekker verstrekker;
+    private OfferteInfoBox offerteInfoBox = new OfferteInfoBox(verstrekker);
+
+    private TextField naam = new TextField();
+    private TextField laatstBijgewerkt = new TextField();
+    private URLBox urlBox;
+    private RenteGroepenPane renteGroepen = new RenteGroepenPane();
+    private VBox opmerkingen = new VBox(10);
+    Button submit = new Button();
+    Button delete = new Button("Verwijder");
+
     //Map<Double, Double> rentePercentages = new HashMap<>();
 
-    public VerstrekkerCreator(MaakVerstrekkerController controller) {
+    public VerstrekkerCreator(App app, InfoTabPane parent) {
+        setSpacing(10);
 
-        setPadding(new Insets(10, 10, 10, 10));
-        add(new Label("Naam: "), 0, 0);         add(name, 1, 0);
-        add(new Label("Rentegroepen "), 0, 1);  add(new Label("Vanaf %: "), 0, 2);
-        add(new Label("Rente"), 1, 2);
+        this.app = app;
+        this.parent = parent;
 
-        for (int i=0; i<10; i++) {
-            TextField minimaalPercentage = new TextField();
-            TextField rentePercentage = new TextField();
+        urlBox = new URLBox(app);
 
-            add(minimaalPercentage, 0, i + 4);
-            add(rentePercentage, 1, i + 4);
-            rentePercentages.put(minimaalPercentage, rentePercentage);
-            //Button addRente = new Button("Voeg toe");
-            //addRente.setOnAction(new RenteController(minimaalPercentage, rentePercentage, rentePercentages));
-            //add(addRente, 2, i + 4);
+        submit.addEventHandler(ActionEvent.ACTION, (EventHandler<Event>) event -> updateVerstrekker());
+        delete.addEventHandler(ActionEvent.ACTION, (EventHandler<Event>) event -> deleteVerstrekker());
+
+        HBox buttons = new HBox(10, submit, delete);
+
+        getChildren().addAll(naam, laatstBijgewerkt, urlBox, renteGroepen, offerteInfoBox, opmerkingen, buttons);
+        reset();
+    }
+
+    public void reset() {
+        this.verstrekker = null;
+
+        naam.clear();
+        laatstBijgewerkt.clear();
+        urlBox.reset();
+        renteGroepen.reset();
+        offerteInfoBox.reset();
+        opmerkingen.getChildren().clear();
+        opmerkingen.getChildren().add(new TextField());
+        submit.setText("Maak verstrekker");
+    }
+
+    public void setVerstrekker(Verstrekker verstrekker) {
+        reset();
+
+        this.verstrekker = verstrekker;
+
+        naam.setText(verstrekker.getNaam());
+        laatstBijgewerkt.setText(verstrekker.getLaatstBijgewerkt());
+        urlBox.updateVerstrekker(verstrekker);
+        renteGroepen.setRente(verstrekker.getRenteGroepen());
+        offerteInfoBox.setOfferte(verstrekker.getOfferte());
+        if (verstrekker.getOpmerkingen() != null) {
+            for (String o : verstrekker.getOpmerkingen()) {
+                opmerkingen.getChildren().add(new TextField(o));
+            }
         }
 
-        Button maak = new Button("Maak verstrekker");
-        maak.setOnAction(controller);
-
-        add(maak, 0, 14);
+        submit.setText("Update verstrekker");
     }
 
-    public String getName() {
-        return name.getText();
+    public void updateVerstrekker() {
+        if (verstrekker == null) verstrekker = new Verstrekker();
+
+        verstrekker.setNaam(naam.getText());
+        verstrekker.setLaatstBijgewerkt(laatstBijgewerkt.getText());
+        verstrekker.setActueleRenteURL(urlBox.url);
+
+        verstrekker.setRenteGroepen(renteGroepen.get());
+        verstrekker.setOfferte(offerteInfoBox.updateOfferte());
+        List<String> opmerkingenList = new ArrayList<>();
+        for (Node n : opmerkingen.getChildren()) {
+            TextField o = (TextField) n;
+            if (!o.getText().isEmpty()) opmerkingenList.add(o.getText());
+        }
+        verstrekker.setOpmerkingen(opmerkingenList);
+
+        // TODO: 02/11/2017 Request 'extraKorting', 'maximaalAflosbaar', 'maandelijkseKortingen' and 'opmerkingen' from
+        // user and set them in Verstrekker
+
+        app.getModel().updateVerstrekkers(verstrekker, Berekenaar.CREATE);
+        parent.reset();
     }
 
-    public Map<TextField, TextField> getRentePercentages() {
-        return rentePercentages;
+    private void deleteVerstrekker() {
+        app.getModel().updateVerstrekkers(verstrekker, Berekenaar.DELETE);
+        parent.reset();
     }
 }

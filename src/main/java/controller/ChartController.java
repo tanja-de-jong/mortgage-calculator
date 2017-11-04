@@ -43,20 +43,20 @@ public class ChartController implements ChangeListener {
 
     public XYChart.Series getSeries(Verstrekker verstrekker, String onderwerp) {
         XYChart.Series series = new XYChart.Series();
-        series.setName(verstrekker.name);
+        series.setName(verstrekker.getNaam());
         //populating the series with data
         for (int year=0; year<
-                verstrekker.brutos.size(); year+=12) {
-            double value = verstrekker.data.get(onderwerp).get(year);
+                verstrekker.getBrutos().size(); year+=12) {
+            double value = verstrekker.getData().get(onderwerp).get(year);
             XYChart.Data data = new XYChart.Data((year + 1) / 12, value);
             series.getData().add(data);
             Map<String, Double> verstrekkerValues = new HashMap();
             for (Verstrekker v : model.verstrekkers) {
-                List<Double> onderwerpWaardes = v.data.get(onderwerp);
+                List<Double> onderwerpWaardes = v.getData().get(onderwerp);
                 double waarde = onderwerpWaardes.size() > year ? onderwerpWaardes.get(year) : 0.0;
-                verstrekkerValues.put(v.name, waarde);
+                verstrekkerValues.put(v.getNaam(), waarde);
             }
-            data.setNode(new HoverNode(verstrekker.data.get(onderwerp).get(year)));
+            data.setNode(new HoverNode(verstrekker.getData().get(onderwerp).get(year)));
 
         }
         return series;
